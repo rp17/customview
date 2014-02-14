@@ -29,8 +29,9 @@ public class CompassView extends View {
       canvas.drawLine(centerx, 0, centerx, height, paint);
       canvas.drawLine(0, centery, width, centery, paint);
       // Rotate the canvas with the azimut      
-      //if (CompassActivity.azimut != null)
-        //canvas.rotate(-CompassActivity.azimut*360/(2*3.14159f), centerx, centery);
+      if (MainActivity.azimut != null) {
+        canvas.rotate(-MainActivity.azimut*360/(2*3.14159f), centerx, centery);
+      }
       paint.setColor(0xff0000ff);
       canvas.drawLine(centerx, -1000, centerx, +1000, paint);
       canvas.drawLine(-1000, centery, 1000, centery, paint);
